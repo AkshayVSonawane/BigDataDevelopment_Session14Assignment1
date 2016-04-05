@@ -1,0 +1,28 @@
+ When Hive is best suited and when is it not?
+ Hive is best suited for Data Warehousing Applications where data is stored, mined and reporting is done based on processing.
+ Hive is not an OLTP (Online transaction Processing) application and not meant to be connected with systems which needs interactive processing.
+ 
+ When should one use Hive over MapReduce?
+ If you are a data analyst, however, you will likely find that you can ramp up on Hadoop faster by using Hive, especially if your previous experience was more with SQL than with a procedural programming language.
+ 
+ What is Hive metastore?
+ The Hive metastore service stores the metadata for Hive tables and partitions in a relational database, and provides clients (including Hive) access to this information via the metastore service API.
+ 
+ How can Hive improve performance with orc file format tables?
+ Using ORC files improves performance when Hive is reading, writing, and processing data.ORC File format are used for improve the performance of Hive Query and reduce the access time and reduce the storage space.
+ 
+ What is thrift server and client, jdbc and odbc driver importance in hive?
+ If we run hive as a server  there are number of mechanisms to connect it from applications.
+ Thrift Client : The Hive server is exposed as a Thrift service, so it’s possible to interact with it using any programming language that supports Thrift. There are third party projects providing clients for Python and Ruby. 
+ JDBC Driver : Using jdbc driver a Java application will connect to a Hive server running in a separate process at the given host and port.
+ ODBC Driver : An ODBC driver allows applications that support the ODBC protocol (such as business intelligence software) to connect to Hive. 
+ 
+ What is the importance of partition in hive?
+ Partition in Hive is used for distributing load horizontally. It enhances query performance, and helps in organizing data in a logical fashion so that every time Hive does not need to scan complete data set.
+ 
+ What is the use of bucketing in hive?
+ Bucketing decomposes data into more manageable or equal parts. With partitioning, there is a possibility that you can create multiple small partitions based on column values. If you go for bucketing, you are restricting number of buckets to store the data. This number is defined during table creation scripts.
+ 
+ What is the difference between static partitioning and dynamic partitioning in hive?
+ Static partitioning needs to be applied when we know data(supposed to be inserted) belongs to which partition.
+ In static partitioning every partitioning needs to be backed with individual hive statement which is not feasible for large number of partitions as it will require writing of lot of hive statements. In that scenario dynamic partitioning is suggested as we can create as many number of partitions with single hive statement.
